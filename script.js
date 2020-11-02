@@ -12,6 +12,6 @@ let newSchool = [
 
 for(let j = 0; j < newSchool.length; j++) {
   for(let n = 0; n < newSchool.length; n++) {
-    document.(newSchool[j][n]);
+    console.log(newSchool[j][n]);
   }
 }
