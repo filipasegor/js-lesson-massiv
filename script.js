@@ -10,6 +10,8 @@ let newSchool = [
 ]
 
 
-newSchool.forEach((item, i, newSchool ) => {
-  console.log( i + item );
-});
+for(let j = 0; j < newSchool.length; j++) {
+  for(let n = 0; n < newSchool.length; n++) {
+    document.(newSchool[j][n]);
+  }
+}
