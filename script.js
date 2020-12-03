@@ -20,7 +20,7 @@ form.onsubmit = function(e) {
     } else {
       let DATA = JSON.parse(xhr.responseText);
       console.log(DATA);
-      resultTemp.innerHTML = (DATA.main.temp - 273);
+      resultTemp.innerHTML = Math.round(DATA.main.temp - 273);
       resultWind.innerHTML = (DATA.wind.speed);
     }
 };
