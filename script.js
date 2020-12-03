@@ -1,6 +1,7 @@
 
 const form = document.forms[0];
-const result = document.querySelector('.result');
+const resultTemp = document.querySelector('.resultTemp');
+const resultWind = document.querySelector('.resultWind');
 
 form.onsubmit = function(e) {
   const APIKey = "0d06ca6575a27b251c37fb74df640635";
@@ -19,10 +20,10 @@ form.onsubmit = function(e) {
     } else {
       let DATA = JSON.parse(xhr.responseText);
       console.log(DATA);
-      result.innerHTML = (DATA.main.temp - 273);
+      resultTemp.innerHTML = (DATA.main.temp - 273);
+      resultWind.innerHTML = (DATA.wind.speed);
     }
 };
-
 
 
 
