@@ -1,39 +1,29 @@
-let crypto = [
-  {
-    name: "Bitcoin",
-    price: 1388.37
-  },
-  {
-    name: "Ethereum",
-    price: 716
-  },
-  {
-    name: "Litecoin",
-    price: 140
-  }
-]
 
+const form = document.forms[0];
+const result = document.querySelector('.result');
 
+form.onsubmit = function(e) {
+  const APIKey = "0d06ca6575a27b251c37fb74df640635";
+  const city = (form.elements.cityName.value);
+  const url = "http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+APIKey;
 
+  let xhr = new XMLHttpRequest();
 
-const forms = document.querySelectorAll('form')
+  xhr.open('GET', url, false);
 
-const progressBarInner = document.getElementsByClassName('progress-bar-inner');
-console.log(progressBarInner[1]);
+  xhr.send();
+  e.preventDefault();
 
-const par = document.querySelectorAll('p');
-console.log(par);
-
-for (form of forms){
-  console.log(form);
+    if (xhr.status != 200) {
+      console.log(xhr.status + ' '+ xhr.statusText);
+    } else {
+      let DATA = JSON.parse(xhr.responseText);
+      console.log(DATA);
+      result.innerHTML = (DATA.main.temp - 273);
+    }
 };
 
-// document.getElementById("bitcoin-inner").innerHTML = crypto[0].price;
-// document.getElementById("ethereum-inner").innerHTML = crypto[1].price;
-// document.getElementById("litecoin-inner").innerHTML = crypto[2].price;
 
 
-for (let i = 0; i < crypto.length; i++){
-  par[i].innerHTML = crypto[i].price;
-  progressBarInner[i].style.width = ((crypto[i].price * 100) / 1388.37) + '%';
-}
+
+console.log(form);
