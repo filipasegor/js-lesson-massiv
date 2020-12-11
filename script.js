@@ -1,6 +1,4 @@
 
-
-
   class Person{
     constructor(name, happiness){
       this.name = name;
@@ -42,21 +40,26 @@ window.addEventListener('load', function() {
 });
 
 
-const form = document.forms[0];
-console.log(form);
 
-// const input = document.querySelector(".is-input").value;
-// console.log(input);
+let container = document.querySelectorAll(".is-input-inner");
+console.log(container);
+
+let inputRadio = document.querySelectorAll('input[type=radio]');
+console.log(inputRadio);
+
 
 form.onsubmit = function(e){
   e.preventDefault();
   let me = new Person (form.elements.name.value, 50);
   console.log(me);
 
-  (form.elements.cat.value = 'yes') ? console.log('Есть кот') : console.log('Нет кота');
+  let elements = document.getElementsByTagName("input")
 
-  // for (let i = 0; i < input.length; i++){
-  //   (input[i].elements.name = 'yes') ? console.log('У Егора есть кот') : console.log('У Егора нет кота');
-  // }
+  for (let i = 0; i < elements.length; i++){
+
+    (form.elements[i].value === 'yes') ? console.log('У Ника есть кот') : console.log('У Ника нет кота');
+  };
+
+
 
 }

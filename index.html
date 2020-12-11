@@ -9,18 +9,25 @@
 
     <div class="columns">
 		<div class="form-col">
-			<form>
+			<form id='form'>
 				<label for="name">Имя?</label>
-				<input type="text" name="name">
-				<label for="cat">Есть кот?</label>
-				<input class="is-input" type="radio" value="yes" name="cat"><span>Да</span>
-				<input class="is-input" type="radio" value="no" name="cat"><span>Нет</span>
-				<label for="rest">Отдыхал недавно?</label>
-				<input class="is-input" type="radio" value="yes" name="rest"><span>Да</span>
-				<input class="is-input" type="radio" value="no" name="rest"><span>Нет</span>
-				<label for="rest">Денег ок?</label>
-				<input class="is-input" type="radio" value="yes" name="money"><span>Да</span>
-				<input class="is-input" type="radio" value="no" name="money"><span>Нет</span>
+
+        <div class="is-input-inner">
+          <input type="text" name="name">
+  				<label for="cat">Есть кот?</label>
+  				<input class="is-input" type="radio" value="yes" name="cat"><span>Да</span>
+  				<input class="is-input" type="radio" value="no" name="cat"><span>Нет</span>
+        </div>
+				<div class="is-input-inner">
+          <label for="rest">Отдыхал недавно?</label>
+          <input class="is-input" type="radio" value="yes" name="rest"><span>Да</span>
+          <input class="is-input" type="radio" value="no" name="rest"><span>Нет</span>
+        </div>
+			  <div class="is-input-inner">
+          <label for="rest">Денег ок?</label>
+  				<input class="is-input" type="radio" value="yes" name="money"><span>Да</span>
+  				<input class="is-input" type="radio" value="no" name="money"><span>Нет</span>
+        </div>
 				<input class="is-input" type="submit" value="HAPPINESS RATE">
 			</form>
 		</div>
